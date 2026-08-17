@@ -1,0 +1,20 @@
+# Secrets
+*.key
+*.pem
+*.secret
+*.token
+.env
+.env.*
+
+# Nix build artefacts
+result
+result-*
+
+# Editors
+.idea/
+.vscode/
+
+# Temporary files
+*.swp
+*.swo
+*~
