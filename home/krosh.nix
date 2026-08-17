@@ -45,7 +45,7 @@
       nconf = "nvim /etc/nixos";
       nflake = "nvim /etc/nixos/flake.nix";
       nhome = "nvim /etc/nixos/home/krosh.nix";
-      nsys = "nvim /etc/nixos/host/laptop/configuration.nix";
+      nsys = "nvim /etc/nixos/hosts/laptop/configuration.nix";
     };
   };
 
