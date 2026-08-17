@@ -68,8 +68,6 @@
       
     ];
   };
-  
-  home-manager.users.krosh = import ./home.nix;
 
   programs.appimage = {
     enable = true;

@@ -19,6 +19,7 @@
     eza
     bat
     btop
+    vscodium
   ];
 
   programs.fish = {
@@ -35,6 +36,16 @@
       la = "eza -a";
       l = "eza -lah";
       ".." = "cd ..";
+      nrs = "sudo nixos-rebuild switch --flake /etc/nixos";
+      nrt = "sudo nixos-rebuild test --flake /etc/nixos";
+      nrb = "sudo nixos-rebuild boot --flake /etc/nixos";
+      nrg = "sudo nixos-rebuild build --flake /etc/nixos";
+
+      ncd = "cd /etc/nixos";
+      nconf = "nvim /etc/nixos";
+      nflake = "nvim /etc/nixos/flake.nix";
+      nhome = "nvim /etc/nixos/home/krosh.nix";
+      nsys = "nvim /etc/nixos/host/laptop/configuration.nix";
     };
   };
 
