@@ -25,6 +25,8 @@
         "$java"
         "$kotlin"
         "$nodejs"
+        "$rust"
+        "$nix_shell"
         "[ ](fg:color_bg4 bg:color_bg5)"
         "$cmd_duration"
         "[ ](fg:color_bg5)"
@@ -135,6 +137,22 @@
         style = "bg:color_bg4 fg:#5FA04E";
         format = "[$symbol($version)]($style)";
         symbol = " ";
+      };
+
+      rust = {
+        style = "bg:color_bg4 fg:#DEA584";
+        format = "[$symbol($version)]($style)";
+        symbol = " ";
+      };
+
+      nix_shell = {
+        disabled = false;
+        format = "[$symbol$state]($style)";
+        symbol = " 󰆍 ";
+        style = "bg:color_bg4 fg:color_blue";
+        impure_msg = "dev";
+        pure_msg = "dev";
+        unknown_msg = "dev";
       };
 
       os.symbols = {

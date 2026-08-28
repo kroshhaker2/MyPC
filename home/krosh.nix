@@ -7,7 +7,6 @@
   home.stateVersion = "26.11";
 
   home.packages = with pkgs; [
-    (callPackage ../packages/nekobox.nix {})
     ayugram-desktop
     vesktop
     prismlauncher
@@ -20,8 +19,12 @@
     bat
     btop
     nixfmt-rfc-style
+    imv
+    mpv
+    jetbrains.idea
+    spotify
   ];
-  
+
   nixpkgs.config.allowUnfree = true;
 
   imports = [
