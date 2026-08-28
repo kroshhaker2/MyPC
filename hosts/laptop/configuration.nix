@@ -1,7 +1,15 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports = [];
+  imports = [
+    ../../programs/easyeffects.nix
+    ../../daemons/sing-box.nix
+  ];
 
   boot.loader.systemd-boot = {
     enable = true;
@@ -21,6 +29,11 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.networkmanager.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   time.timeZone = "Europe/Moscow";
 
@@ -43,6 +56,18 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  security.polkit = {
+    enable = true;
+    enablePkexecWrapper = true;
+  };
+
+  security.wrappers.nekobox-pkexec = {
+    source = "${pkgs.polkit}/bin/pkexec";
+    owner = "root";
+    group = "root";
+    permissions = "u+rx";
+  };
+
   services.xserver.xkb = {
     layout = "ru";
     variant = "";
@@ -52,6 +77,7 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -62,13 +88,23 @@
 
   programs.fish.enable = true;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+    ];
+  };
+
   users.users."krosh" = {
     isNormalUser = true;
     description = "Krosh";
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-      
+
     ];
   };
 
@@ -76,23 +112,30 @@
     enable = true;
   };
 
+  services.flatpak.enable = true;
+
   programs.firefox.enable = false;
+
+  programs.steam = {
+    enable = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [                                                                                                                                                     
-    elisa                                                                                                                                                                                                            
-    gwenview                                                                                                                                                                                                         
-    okular                                                                                                                                                                                                           
-    kate                                                                                                                                                                                                             
-    khelpcenter                                                                                                                                                                                                      
-    baloo                                                                                                                                                                                                            
-    dolphin-plugins                                                                                                                                                                                                  
-    dolphin                                                                                                                                                                                                          
-    discover                                                                                                                                                                                                         
-    qrca                                                                                                                                                                                                             
-    ark                                                                                                                                                                                                              
-  ];     
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa
+    gwenview
+    okular
+    kate
+    khelpcenter
+    baloo
+    dolphin-plugins
+    dolphin
+    discover
+    qrca
+    ark
+    konsole
+  ];
 
   environment.systemPackages = with pkgs; [
     inputs.zen-browser.packages."${pkgs.system}".default
@@ -109,12 +152,17 @@
     pciutils
     usbutils
     util-linux
+    easyeffects
+    sing-box
+    python3
+    file
   ];
-
 
   # services.openssh.enable = true;
 
-
   system.stateVersion = "26.05";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
