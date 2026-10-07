@@ -17,6 +17,7 @@
         "editor.fontSize" = 14;
         "editor.formatOnSave" = true;
         "editor.minimap.enabled" = false;
+        "workbench.tree.indent" = 20;
         "files.autoSave" = "afterDelay";
         "terminal.integrated.defaultProfile.linux" = "fish";
         "editor.fontFamily" = "Hack Nerd Font";

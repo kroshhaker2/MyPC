@@ -10,7 +10,6 @@
     ayugram-desktop
     vesktop
     prismlauncher
-    kitty
     nautilus
     nerd-fonts.hack
     ripgrep
@@ -23,6 +22,12 @@
     mpv
     jetbrains.idea
     spotify
+    obsidian
+    jdk8
+    xorg-server
+    libreoffice
+    spotifyd
+    qbittorrent
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -36,4 +41,8 @@
     ../programs/kitty.nix
     ../programs/git.nix
   ];
+
+  programs.codexDesktopLinux = {
+    enable = true;
+  };
 }

@@ -18,3 +18,10 @@ result-*
 *.swp
 *.swo
 *~
+
+logs/
+docker/
+
+# Proprietary Pantum installer payload; packages/pantum/default.nix contains
+# only the reproducible packaging recipe and the expected SHA-256 hash.
+/packages/pantum/pantum-linux-driver/
