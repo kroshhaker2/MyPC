@@ -1,0 +1,6 @@
+flake.lock
+.git/
+assets/
+*.nix
+*.lua
+*.rasi

@@ -9,9 +9,11 @@
   imports = [
     ../../daemons/sing-box.nix
     ../../modules/desktop.nix
+    ../../modules/hyprland.nix
     ../../modules/printing.nix
     ../../modules/remote-access.nix
     ../../modules/virtualisation.nix
+    ../../modules/xkb.nix
   ];
 
   boot.loader.systemd-boot = {

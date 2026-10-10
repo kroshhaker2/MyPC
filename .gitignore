@@ -10,10 +10,6 @@
 result
 result-*
 
-# Editors
-.idea/
-.vscode/
-
 # Temporary files
 *.swp
 *.swo
@@ -25,3 +21,9 @@ docker/
 # Proprietary Pantum installer payload; packages/pantum/default.nix contains
 # only the reproducible packaging recipe and the expected SHA-256 hash.
 /packages/pantum/pantum-linux-driver/
+
+# Keep only the active wallpaper in Git. Store local alternatives alongside it
+# without growing the repository.
+/assets/wallpapers/*
+!/assets/wallpapers/default.png
+!/assets/wallpapers/README.md

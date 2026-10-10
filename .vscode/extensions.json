@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "jnoortheen.nix-ide",
+    "redhat.vscode-yaml",
+    "sumneko.lua",
+    "timonwong.shellcheck"
+  ]
+}

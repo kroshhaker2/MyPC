@@ -1,0 +1,10 @@
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  terminal: "kitty";
+  drun-display-format: "{name}";
+  display-drun: "Приложения";
+  font: "Hack Nerd Font 13";
+}
+
+@theme "theme"

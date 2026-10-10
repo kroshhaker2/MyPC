@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     ayugram-desktop
-    vesktop
+    discord
     prismlauncher
     nautilus
     nerd-fonts.hack
@@ -17,17 +17,41 @@
     eza
     bat
     btop
-    nixfmt-rfc-style
+    nixfmt
+    nixd
+    prettier
+    stylua
+    shfmt
+    shellcheck
+    taplo
+    treefmt
+    statix
+    deadnix
+    vscode-langservers-extracted
+    lua-language-server
     imv
     mpv
     jetbrains.idea
     spotify
     obsidian
     jdk8
-    xorg-server
     libreoffice
     spotifyd
     qbittorrent
+    rofi
+    hyprlock
+    wlogout
+    grimblast
+    swaynotificationcenter
+    cliphist
+    wl-clipboard
+    rofimoji
+    waybar
+    brightnessctl
+    playerctl
+    hyprpaper
+    spotify-qt
+    codex
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -40,9 +64,22 @@
     ../programs/direnv.nix
     ../programs/kitty.nix
     ../programs/git.nix
+    ../programs/hyprland
   ];
 
   programs.codexDesktopLinux = {
     enable = true;
+  };
+
+  services.network-manager-applet.enable = true;
+
+  services.spotifyd = {
+    enable = true;
+    settings.global = {
+      backend = "pulseaudio";
+      device_name = "NixOS";
+      bitrate = 320;
+      use_mpris = true;
+    };
   };
 }

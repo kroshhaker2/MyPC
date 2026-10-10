@@ -10,6 +10,8 @@
     powerOnBoot = true;
   };
 
+  services.blueman.enable = true;
+
   services.xserver = {
     enable = true;
     xkb = {

@@ -1,0 +1,67 @@
+* {
+  background: #0a0c10;
+  surface: #12171ec7;
+  surface-hover: #1a222cdb;
+  border-color: #7ebae447;
+  text-color: #e5edf4;
+  muted-color: #8998a8;
+  blue: #7ebae4;
+}
+
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  width: 42%;
+  border: 1px;
+  border-color: @border-color;
+  border-radius: 12px;
+  background-color: @surface;
+}
+
+mainbox {
+  padding: 14px;
+  spacing: 10px;
+  background-color: transparent;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  spacing: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: @background;
+}
+
+prompt { text-color: @blue; }
+
+entry {
+  placeholder: "Поиск…";
+  placeholder-color: @muted-color;
+  text-color: @text-color;
+}
+
+listview {
+  lines: 8;
+  columns: 1;
+  fixed-height: false;
+  scrollbar: false;
+  spacing: 4px;
+}
+
+element {
+  padding: 9px 10px;
+  spacing: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  text-color: @text-color;
+}
+
+element selected.normal { background-color: @blue; text-color: @background; }
+element-icon { size: 1.4em; }
+
+element-text {
+  vertical-align: 0.5;
+  background-color: inherit;
+  text-color: inherit;
+}
