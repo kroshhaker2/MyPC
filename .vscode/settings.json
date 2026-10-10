@@ -34,5 +34,6 @@
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "Lua.diagnostics.globals": ["hl"]
 }
