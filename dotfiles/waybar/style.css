@@ -1,10 +1,4 @@
-/* Static palette: no dependency on pywal. */
-@define-color background #0a0c10;
-@define-color foreground #e5edf4;
-@define-color color1 #7ebae4;
-@define-color color2 #4c7899;
-@define-color color7 #e5edf4;
-@define-color color9 #9bd3f7;
+@import url("/etc/nixos/dotfiles/theme/colors-waybar.css");
 
 * {
   font-size: 15px;
@@ -50,7 +44,7 @@ tooltip {
 #temperature:hover,
 #custom-gpu:hover {
   transition: all 0.3s ease;
-  color: @color9;
+  color: @color12;
 }
 #custom-notification {
   padding: 0px 5px;
@@ -132,15 +126,15 @@ tooltip {
   color: @color7;
 }
 #battery.charging {
-  color: #26a65b;
+  color: @color10;
 }
 
 #battery.warning:not(.charging) {
-  color: #ffbe61;
+  color: @color11;
 }
 
 #battery.critical:not(.charging) {
-  color: #f53c3c;
+  color: @color9;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;

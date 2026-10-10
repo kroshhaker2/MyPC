@@ -1,67 +1,77 @@
-* {
-  background: #0a0c10;
-  surface: #12171ec7;
-  surface-hover: #1a222cdb;
-  border-color: #7ebae447;
-  text-color: #e5edf4;
-  muted-color: #8998a8;
-  blue: #7ebae4;
-}
+@import "/etc/nixos/dotfiles/theme/colors-rofi.rasi"
 
 window {
   transparency: "real";
   location: center;
   anchor: center;
-  width: 42%;
-  border: 1px;
-  border-color: @border-color;
-  border-radius: 12px;
+  width: 460px;
+  height: 340px;
+  padding: 14px;
+  border: 0px;
+  border-radius: 14px;
   background-color: @surface;
 }
 
 mainbox {
-  padding: 14px;
-  spacing: 10px;
-  background-color: transparent;
+  spacing: 0px;
+  background-color: @transparent;
 }
 
 inputbar {
-  children: [ prompt, entry ];
+  children: [ entry ];
+  margin: 12px 12px 0px 12px;
+  padding: 12px;
   spacing: 8px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background-color: @background;
+  border: 0px;
+  border-radius: 10px;
+  background-color: @input-surface;
 }
 
-prompt { text-color: @blue; }
+prompt {
+  enabled: false;
+  text-color: @color12;
+  background-color: @transparent;
+}
 
 entry {
   placeholder: "Поиск…";
-  placeholder-color: @muted-color;
-  text-color: @text-color;
+  placeholder-color: @color8;
+  text-color: @foreground;
+  background-color: @transparent;
 }
 
 listview {
-  lines: 8;
+  lines: 6;
   columns: 1;
-  fixed-height: false;
+  fixed-height: true;
   scrollbar: false;
-  spacing: 4px;
+  padding: 16px;
+  spacing: 2px;
+  background-color: @transparent;
 }
 
 element {
-  padding: 9px 10px;
-  spacing: 10px;
-  border-radius: 8px;
-  background-color: transparent;
-  text-color: @text-color;
+  margin: 3px;
+  padding: 7px;
+  spacing: 8px;
+  border: 0px;
+  border-radius: 20px;
+  background-color: @transparent;
+  text-color: @foreground;
 }
 
-element selected.normal { background-color: @blue; text-color: @background; }
-element-icon { size: 1.4em; }
+element selected.normal {
+  background-color: @transparent;
+  text-color: @color12;
+}
+
+element-icon {
+  size: 1.3em;
+  background-color: @transparent;
+}
 
 element-text {
   vertical-align: 0.5;
-  background-color: inherit;
+  background-color: @transparent;
   text-color: inherit;
 }

@@ -15,7 +15,19 @@ hl.window_rule({
   match = { class = "dropdown-terminal" },
   float = true,
   workspace = "special:terminal silent",
-  size = { "monitor_w*0.90", "monitor_h*0.45" },
-  move = { "monitor_w*0.05", "40" },
   rounding = 10,
+})
+
+hl.layer_rule({
+  name = "waybar-blur",
+  match = { namespace = "waybar" },
+  blur = true,
+  ignore_alpha = 0.5,
+})
+
+hl.layer_rule({
+  name = "rofi-blur",
+  match = { namespace = "rofi" },
+  blur = true,
+  ignore_alpha = 0.5,
 })

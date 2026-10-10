@@ -6,7 +6,13 @@
 
     interactiveShellInit = ''
       set -g fish_greeting
-      fastfetch
+
+      # Keep shell startup readable in dropdown and other small terminals.
+      if test "$COLUMNS" -ge 110
+        fastfetch
+      else if test "$COLUMNS" -ge 45
+        fastfetch --logo none
+      end
     '';
 
     shellAliases = {

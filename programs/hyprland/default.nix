@@ -10,7 +10,9 @@ in
     ./autostart.nix
     ./packages.nix
     ./rofi.nix
+    ./theme.nix
     ./waybar.nix
+    ./wlogout.nix
   ];
 
   xdg.configFile = {

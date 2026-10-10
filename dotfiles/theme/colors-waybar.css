@@ -1,0 +1,24 @@
+/*
+ * Central GTK palette for Waybar and Wlogout.
+ * The variable names match Pywal's colors-waybar.css output.
+ */
+@define-color background #0a0c10;
+@define-color foreground #e5edf4;
+@define-color cursor #e5edf4;
+
+@define-color color0 #0a0c10;
+@define-color color1 #7ebae4;
+@define-color color2 #4c7899;
+@define-color color3 #ffbe61;
+@define-color color4 #7ebae4;
+@define-color color5 #9bd3f7;
+@define-color color6 #79c0ff;
+@define-color color7 #e5edf4;
+@define-color color8 #8998a8;
+@define-color color9 #f53c3c;
+@define-color color10 #26a65b;
+@define-color color11 #ffbe61;
+@define-color color12 #9bd3f7;
+@define-color color13 #c099ff;
+@define-color color14 #89ddff;
+@define-color color15 #ffffff;
